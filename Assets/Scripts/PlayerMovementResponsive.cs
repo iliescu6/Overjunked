@@ -137,7 +137,7 @@ public class PlayerMovementResponsive : MonoBehaviour, IPlayerInput
 
     void PickPiece(RobotPiece roboPiece)
     {
-        if (playerPieces[0].owned == false)
+        if (playerPieces[0].owned == false && roboPiece.gameObject.transform.parent==null)
         {
             playerPieces[0].owned = true;
             playerPieces[0].piece = roboPiece.piece;
@@ -150,7 +150,7 @@ public class PlayerMovementResponsive : MonoBehaviour, IPlayerInput
             }
             roboPiece.transform.localPosition = new Vector3(0, 0, 0);
         }
-        else if( playerPieces[1].owned == false)
+        else if( playerPieces[1].owned == false && roboPiece.gameObject.transform.parent == null)
         {
             playerPieces[1].owned = true;
             playerPieces[1].piece = roboPiece.piece;
